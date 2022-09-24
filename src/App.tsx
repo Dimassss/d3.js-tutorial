@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from './error-page';
 import HomePage from './pages';
+import SmilePage from './pages/smile';
 
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
         element: (<HomePage/>),
         errorElement: <ErrorPage />,
     },
+    {
+        path: 'smile',
+        element: (<SmilePage/>)
+    }
 ]);
 
 export default function App(){
