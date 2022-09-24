@@ -9,6 +9,7 @@ import HomePage from './pages';
 import CssColourNames from './pages/css-colour-names';
 import ReactMouseCircleFollower from './pages/react-mouse-circle-follower';
 import SmilePage from './pages/smile';
+import VegaPage from './pages/vega';
 
 
 const router = createBrowserRouter([
@@ -28,11 +29,15 @@ const router = createBrowserRouter([
     {
         path: 'css-colour-names',
         element: (<CssColourNames/>)
+    },
+    {
+        path: 'vega',
+        element: (<VegaPage/>)
     }
 ]);
 
 export default function App(){
-    return (<React.StrictMode>
+    return (<>
         <RouterProvider router={router} />
-    </React.StrictMode>)
+    </>)
 }

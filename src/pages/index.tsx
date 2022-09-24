@@ -9,5 +9,6 @@ export default function HomePage(){
         <Link to={'/smile'}>Smile page</Link><br/>
         <Link to={'/react-mouse-circle-follower'}>react-mouse-circle-follower</Link><br/>
         <Link to={'/css-colour-names'}>'css-colour-names'</Link><br/>
+        <Link to={'/vega'}>vega page</Link>
     </div>)
 }
