@@ -1,43 +1,22 @@
 import React from "react";
-import { arc } from 'd3'
-
-const width = 960
-const height = 500;
-const centerX = width / 2
-const centerY = height / 2
-const strokeWidth = 20
-const eyeOffsetX = 90
-const eyeOffsetY = 100
-const eyeRadius = 40
-const mouthWidth = 20;
-const mouthRadius = 140;
-
-const mouthArc = arc()
-    .innerRadius(mouthRadius)
-    .outerRadius(mouthRadius + mouthWidth)
-    .startAngle(Math.PI / 2)
-    .endAngle(Math.PI * 3 / 2)
+import Face from "../components/smile/Face";
+import { range } from "d3"
 
 export default function SmilePage(){
-    return (<svg width={width} height={height}>
-        <g transform={`translate(${centerX}, ${centerY})`}>
-            <circle
-                r={centerY - strokeWidth / 2}
-                fill="yellow"
-                stroke="black"
-                strokeWidth={strokeWidth}
-            ></circle>
-            <circle
-                cx={-eyeOffsetX}
-                cy={-eyeOffsetY}
-                r={eyeRadius}
-            ></circle>
-            <circle
-                cx={eyeOffsetX}
-                cy={-eyeOffsetY}
-                r={eyeRadius}
-            ></circle>
-            <path d={mouthArc(null)}/>
-        </g>
-    </svg>)
+    const width = 160
+    const height = 160;
+
+    return range(6*3).map((el, i) => (<Face 
+        width={width} 
+        height={height} 
+        centerX={width / 2} 
+        centerY={height / 2} 
+        strokeWidth={10} 
+        eyeOffsetX={30} 
+        eyeOffsetY={30} 
+        eyeRadius={10 + Math.random()*10} 
+        mouthRadius={40} 
+        mouthWidth={10}
+        key={i}
+    />))
 }
