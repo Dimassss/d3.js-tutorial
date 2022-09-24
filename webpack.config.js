@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.tsx',
     mode: 'development',
+    devtool:'source-map',
     module: {
         rules: [
             {
@@ -14,6 +15,10 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: "html-loader",
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             },
         ],
     },
